@@ -181,7 +181,7 @@ fun Entry(
         Column {
             SubcomposeAsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data(entry.images.firstOrNull()) // Используйте первое изображение из списка
+                    .data(entry.images.firstOrNull())
                     .crossfade(true)
                     .build(),
                 contentDescription = entry.name,

@@ -36,6 +36,7 @@ fun HomeNavGraph(navController: NavHostController) {
                 it.arguments?.getString("characterId")
             }
             NarutoDetailScreen(
+                navController = navController,
                 characterId = characterId ?: ""
             )
         }
