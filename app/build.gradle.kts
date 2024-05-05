@@ -53,6 +53,7 @@ android {
 }
 
 dependencies {
+
     // Firebase
     implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
     // Splash Screen Api
