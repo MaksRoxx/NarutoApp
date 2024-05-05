@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "348554212458",
+    "project_id": "projecttest-59510",
+    "storage_bucket": "projecttest-59510.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348554212458:android:60574af890e8fd38130613",
+        "android_client_info": {
+          "package_name": "com.example.firebasehilt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT6QXeSga0niAsjAMhNv0pLgxd18P5gW8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348554212458:android:46c4c7b72cd83243130613",
+        "android_client_info": {
+          "package_name": "com.example.narutoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCT6QXeSga0niAsjAMhNv0pLgxd18P5gW8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

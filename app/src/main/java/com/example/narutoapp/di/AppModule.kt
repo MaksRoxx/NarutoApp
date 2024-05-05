@@ -1,8 +1,11 @@
 package com.example.narutoapp.di
 
+import com.example.narutoapp.data.AuthRepository
 import com.example.narutoapp.data.NarutoApi
+import com.example.narutoapp.repository.AuthRepositoryImpl
 import com.example.narutoapp.repository.NarutoRepository
 import com.example.narutoapp.util.Constants.BASE_URL
+import com.google.firebase.auth.FirebaseAuth
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -31,4 +34,10 @@ object AppModule {
             .build()
             .create(NarutoApi::class.java)
     }
+
+    @Provides
+    fun provideFirebaseAuth(): FirebaseAuth = FirebaseAuth.getInstance()
+
+    @Provides
+    fun provideAuthRepository(impl: AuthRepositoryImpl): AuthRepository = impl
 }

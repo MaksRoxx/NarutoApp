@@ -9,10 +9,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.navArgument
+import com.example.customjetpack.customscreens.AuthScreen
+import com.example.customjetpack.customscreens.RegisterScreen
+import com.example.customjetpack.customscreens.UserInfo
 import com.example.narutoapp.screens.narutodetail.NarutoDetailScreen
 import com.example.narutoapp.screens.narutolist.NarutoListScreen
 import com.example.pokedexcompose.screens.home.BottomBarScreen
-import com.example.pokedexcompose.screens.universal.ScreenContent
 
 @Composable
 fun HomeNavGraph(navController: NavHostController) {
@@ -47,22 +49,16 @@ fun HomeNavGraph(navController: NavHostController) {
 fun NavGraphBuilder.authNavGraph(navController: NavHostController) {
     navigation(
         route = AppScreen.App.route,
-        startDestination = AppScreen.SingIn.route
+        startDestination = AppScreen.AuthScreen.route
     ) {
-        composable(route = AppScreen.SingIn.route) {
-            ScreenContent(name = AppScreen.SingIn.route) {
-
-            }
+        composable(route = AppScreen.AuthScreen.route) {
+            AuthScreen(navController = navController)
         }
-        composable(route = AppScreen.SingUp.route) {
-            ScreenContent(name = AppScreen.SingUp.route) {
-
-            }
+        composable(route = AppScreen.RegisterScreen.route) {
+            RegisterScreen(navController = navController)
         }
-        composable(route = AppScreen.Profile.route) {
-            ScreenContent(name = AppScreen.Profile.route) {
-
-            }
+        composable(route = AppScreen.UserInfo.route) {
+            UserInfo(navController = navController)
         }
     }
 }
@@ -71,7 +67,7 @@ sealed class AppScreen(val route: String) {
     object ListScreen : AppScreen(route = "naruto_list_screen")
     object DetailScreen : AppScreen(route = "naruto_detail_screen")
     object App : AppScreen(route = "auth")
-    object Profile : AppScreen(route = "profile")
-    object SingIn : AppScreen(route = "singIn")
-    object SingUp : AppScreen(route = "singUp")
+    object UserInfo : AppScreen(route = "user_screen")
+    object AuthScreen : AppScreen(route = "auth_screen")
+    object RegisterScreen : AppScreen(route = "register_screen")
 }

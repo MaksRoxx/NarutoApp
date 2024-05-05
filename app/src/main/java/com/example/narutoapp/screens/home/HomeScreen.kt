@@ -6,22 +6,28 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.narutoapp.screens.AppScreen
 import com.example.narutoapp.screens.HomeNavGraph
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun HomeScreen(navController: NavHostController = rememberNavController()) {
+    val snackbarHostState = remember { SnackbarHostState() }
     Scaffold(
-        bottomBar = { BottomBar(navController = navController)}
+        bottomBar = { BottomBar(navController = navController) },
+        snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
     ) {
         HomeNavGraph(navController = navController)
     }
@@ -37,7 +43,7 @@ fun BottomBar(navController: NavHostController) {
     val currentDestination = navBackStackEntry?.destination
     val bottomBarDestination = screns.any { it.route == currentDestination?.route }
 
-    if (bottomBarDestination) {
+    if (bottomBarDestination || AppScreen.UserInfo.route == currentDestination?.route) {
         NavigationBar {
             screns.forEach { screen ->
                 AddItem(
