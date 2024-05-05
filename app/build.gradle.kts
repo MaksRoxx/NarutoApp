@@ -56,6 +56,7 @@ dependencies {
 
     // Firebase
     implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
+    implementation(libs.firebase.auth.ktx)
 
     // Splash Screen Api
     implementation("androidx.core:core-splashscreen:1.0.0")
@@ -86,7 +87,6 @@ dependencies {
 
     //Dagger - Hilt
     implementation("com.google.dagger:hilt-android:2.48")
-    implementation(libs.firebase.auth.ktx)
     kapt("com.google.dagger:hilt-android-compiler:2.48")
     kapt("androidx.hilt:hilt-compiler:1.2.0")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
