@@ -361,10 +361,10 @@ fun CharacterFamilySection(family: Family, name: String) {
                 fontSize = 18.sp
             )
         }
-        if (family.incarnation_with_the_god_tree != null) {
+        if (family.`incarnation with the god tree` != null) {
             Spacer(modifier = Modifier.height(4.dp))
             Text(
-                text = "Incarnation with the god tree: ${family.incarnation_with_the_god_tree}",
+                text = "Incarnation with the god tree: ${family.`incarnation with the god tree`}",
                 fontSize = 18.sp
             )
         }

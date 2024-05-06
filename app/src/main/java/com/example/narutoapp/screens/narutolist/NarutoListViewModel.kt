@@ -69,7 +69,7 @@ class NarutoListViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.Default) {
             if (query.isEmpty()) {
                 charactersList.clear()
-                charactersList.addAll(cachedCharacterList)
+                loadCharacters()
                 isSearching.value = false
                 isSearchingStarted = true
                 return@launch

@@ -9,7 +9,7 @@ data class Family(
     val depowered_form: String,
     val father: String,
     val husband: String,
-    val incarnation_with_the_god_tree: String,
+    var `incarnation with the god tree`: String,
     val nephew: String,
     val son: String
 )
