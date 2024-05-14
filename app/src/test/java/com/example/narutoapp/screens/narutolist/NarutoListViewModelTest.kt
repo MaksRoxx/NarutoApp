@@ -53,7 +53,6 @@ class NarutoListViewModelTest {
             )
         )
         val entr = ListEntry(characters, 1, 20, 20)
-        val totalCharacters = characters.size
         val expectedResult = Resourse.Success(entr)
 
         coEvery { repository.getALlCharacter(1, 20) } returns expectedResult
