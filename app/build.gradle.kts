@@ -54,6 +54,9 @@ android {
 
 dependencies {
 
+    // Mockk
+    testImplementation("io.mockk:mockk:1.12.0")
+
     // Firebase
     implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
     implementation(libs.firebase.auth.ktx)
@@ -76,6 +79,7 @@ dependencies {
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.0")
 
     // Coroutine Lifecycle Scopes
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
